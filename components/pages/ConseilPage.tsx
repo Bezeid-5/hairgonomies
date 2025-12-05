@@ -93,7 +93,7 @@ export default function ConseilPage() {
             Conseil du Village
           </h1>
           <p className="text-xl opacity-90">
-            Témoignages des Druides - Retours d'expérience de la résistance numérique
+            Témoignages des Druides - Retours d&apos;expérience de la résistance numérique
           </p>
         </div>
       </div>
@@ -106,7 +106,7 @@ export default function ConseilPage() {
           className="bg-white rounded-xl p-6 shadow-lg text-center"
         >
           <p className="text-lg text-gray-700">
-            Découvrez comment d'autres établissements ont réussi leur migration vers le libre. 
+            Découvrez comment d&apos;autres établissements ont réussi leur migration vers le libre. 
             Leurs expériences, leurs conseils, leurs économies réalisées.
           </p>
         </motion.div>

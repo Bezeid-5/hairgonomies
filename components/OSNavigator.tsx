@@ -251,7 +251,7 @@ export default function OSNavigator({
           <div className="relative min-h-screen p-8 pb-24">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-white text-3xl mb-8 font-handwritten text-center">
-                Vue d'ensemble - La Carte des Villages Résistants
+                Vue d&apos;ensemble - La Carte des Villages Résistants
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {pages.map((page) => (
@@ -338,7 +338,7 @@ export default function OSNavigator({
               <kbd className="px-2 py-1 bg-[#3BAFDA]/20 text-[#3BAFDA] rounded border border-[#3BAFDA]/40 font-mono">
                 W
               </kbd>
-              <span className="ml-1 text-white/60">Vue d'ensemble</span>
+              <span className="ml-1 text-white/60">Vue d&apos;ensemble</span>
             </div>
             <div className="flex items-center gap-2">
               <kbd className="px-2 py-1 bg-[#3BAFDA]/20 text-[#3BAFDA] rounded border border-[#3BAFDA]/40 font-mono">

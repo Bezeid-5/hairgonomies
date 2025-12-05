@@ -31,11 +31,11 @@ export default function AccueilPage({ setCurrentPage }: AccueilPageProps) {
               La Carte des Villages Résistants
             </h1>
             <p className="text-2xl md:text-3xl font-handwritten mb-6">
-              "Ils sont fous ces Romains (numériques) !"
+              &quot;Ils sont fous ces Romains (numériques) !&quot;
             </p>
             <p className="text-lg md:text-xl max-w-3xl mx-auto opacity-90">
               Rejoignez la communauté NIRD et découvrez comment les établissements scolaires 
-              résistent à l'empire des Big Tech
+              résistent à l&apos;empire des Big Tech
             </p>
           </motion.div>
         </div>
@@ -80,19 +80,19 @@ export default function AccueilPage({ setCurrentPage }: AccueilPageProps) {
           className="bg-white rounded-2xl p-8 md:p-12 shadow-xl"
         >
           <h2 className="text-3xl md:text-4xl font-handwritten font-bold text-forest-green-800 mb-6">
-            Le Problème : L'Empire Numérique
+            Le Problème : L&apos;Empire Numérique
           </h2>
           <div className="space-y-4 text-lg text-gray-700">
             <p>
-              Les établissements scolaires français dépensent des millions d'euros chaque année 
+              Les établissements scolaires français dépensent des millions d&apos;euros chaque année 
               en licences Microsoft, Google, Adobe et autres géants du numérique. 
               <strong className="text-warm-orange-600"> Nos données éducatives sont hébergées 
-              à l'étranger</strong>, nos élèves apprennent à dépendre de logiciels propriétaires, 
+              à l&apos;étranger</strong>, nos élèves apprennent à dépendre de logiciels propriétaires, 
               et nos budgets sont engloutis par des abonnements récurrents.
             </p>
             <p>
-              <strong className="text-forest-green-700">Mais la résistance s'organise !</strong> 
-              Des dizaines d'établissements ont déjà migré vers des solutions libres et open source, 
+              <strong className="text-forest-green-700">Mais la résistance s&apos;organise !</strong> 
+              Des dizaines d&apos;établissements ont déjà migré vers des solutions libres et open source, 
               réalisant des économies considérables tout en reprenant le contrôle de leurs données.
             </p>
           </div>
@@ -111,7 +111,7 @@ export default function AccueilPage({ setCurrentPage }: AccueilPageProps) {
             Rejoins la Résistance Numérique !
           </h2>
           <p className="text-xl mb-6 opacity-90">
-            Ton établissement peut être le prochain village gaulois à tenir tête à l'empire.
+            Ton établissement peut être le prochain village gaulois à tenir tête à l&apos;empire.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <motion.button
@@ -128,7 +128,7 @@ export default function AccueilPage({ setCurrentPage }: AccueilPageProps) {
               onClick={() => setCurrentPage('armurerie')}
               className="bg-warm-orange-500 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
             >
-              Découvrir l'Arsenal
+              Découvrir l&apos;Arsenal
             </motion.button>
           </div>
         </motion.div>

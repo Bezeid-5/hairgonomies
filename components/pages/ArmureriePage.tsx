@@ -121,7 +121,7 @@ export default function ArmureriePage() {
       <div className="bg-gradient-to-r from-forest-green-600 to-forest-green-800 text-white py-12">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-handwritten font-bold mb-4">
-            L'Arsenal Libre
+            L&apos;Arsenal Libre
           </h1>
           <p className="text-xl opacity-90">
             Découvrez les alternatives libres aux outils propriétaires

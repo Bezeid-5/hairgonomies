@@ -161,7 +161,7 @@ export default function QuetesPage() {
             Quêtes - Défis de Résistance
           </h1>
           <p className="text-xl opacity-90">
-            Parcours gamifié pour passer à l'action et rejoindre la résistance
+            Parcours gamifié pour passer à l&apos;action et rejoindre la résistance
           </p>
         </div>
       </div>

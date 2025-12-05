@@ -188,7 +188,7 @@ export default function EcolePage() {
             className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all text-left border-2 border-transparent hover:border-trust-blue-300"
           >
             <Calculator className="w-8 h-8 text-trust-blue-600 mb-3" />
-            <h3 className="font-bold text-lg mb-2">Calculateur d'économies</h3>
+            <h3 className="font-bold text-lg mb-2">Calculateur d&apos;économies</h3>
             <p className="text-gray-600 text-sm">
               Estimez les économies réalisables avec Linux
             </p>
@@ -222,7 +222,7 @@ export default function EcolePage() {
         </div>
       </div>
 
-      {/* Calculateur d'économies */}
+      {/* Calculateur d&apos;économies */}
       {showCalculator && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -231,12 +231,12 @@ export default function EcolePage() {
         >
           <div className="bg-white rounded-xl p-8 shadow-xl">
             <h2 className="text-2xl font-bold text-forest-green-800 mb-6">
-              Calculateur d'économies
+              Calculateur d&apos;économies
             </h2>
             <div className="space-y-4">
               <div>
                 <label className="block text-gray-700 font-semibold mb-2">
-                  Nombre d'ordinateurs
+                  Nombre d&apos;ordinateurs
                 </label>
                 <input
                   type="number"
@@ -349,7 +349,7 @@ export default function EcolePage() {
               </div>
               <div>
                 <label htmlFor="nombre-pc" className="block text-gray-700 font-semibold mb-2">
-                  Nombre d'ordinateurs
+                  Nombre d&apos;ordinateurs
                 </label>
                 <input
                   id="nombre-pc"
@@ -478,7 +478,7 @@ export default function EcolePage() {
               </div>
 
               <div>
-                <h3 className="font-bold text-lg mb-4 text-forest-green-800">Plan d'action</h3>
+                <h3 className="font-bold text-lg mb-4 text-forest-green-800">Plan d&apos;action</h3>
                 <div className="space-y-2">
                   {planGenere.etapes.map((etape: string, index: number) => (
                     <div
