@@ -35,10 +35,9 @@ La Carte des Villages Résistants NIRD est une application web interactive déve
 
 ## 🔗 Liens
 
-- **📦 GitHub** : [Lien vers le repository GitHub](https://github.com/votre-username/hairgonomies)
-- **🌐 Rendu en ligne** : [Lien vers la démo live](https://votre-url-deploy.com)
+- **📦 GitHub** : [Lien vers le repository GitHub](https://github.com/Bezeid-5/hairgonomies.git)
+- **🌐 Rendu en ligne** : [Lien vers la démo](https://hairgonomies-three.vercel.app/)
 
-> ⚠️ **Note** : Veuillez remplacer ces liens par les vrais liens de votre projet une fois déployé.
 
 ---
 
@@ -104,7 +103,7 @@ L'application propose une expérience de navigation unique inspirée des systèm
 
 ```bash
 # Cloner le repository
-git clone https://github.com/votre-username/hairgonomies.git
+git clone https://github.com/Bezeid-5/hairgonomies.git
 cd hairgonomies
 
 # Installer les dépendances
@@ -134,126 +133,6 @@ npm start
 # Linter
 npm run lint
 ```
-
----
-
-## 🛠️ Technologies
-
-### Frontend
-
-- **Next.js 14** : Framework React avec App Router pour le routing et le SSR
-- **TypeScript** : Typage statique pour une meilleure maintenabilité
-- **Tailwind CSS** : Framework CSS utilitaire pour un design responsive
-- **Framer Motion** : Bibliothèque d'animations fluides et performantes
-- **Lucide React** : Icônes modernes et légères
-
-### Structure
-
-```
-hairgonomies/
-├── app/
-│   ├── layout.tsx          # Layout principal avec métadonnées
-│   ├── page.tsx            # Page d'accueil avec système de navigation
-│   └── globals.css         # Styles globaux et variables CSS
-├── components/
-│   ├── OSNavigator.tsx     # Système de navigation OS (modes, raccourcis)
-│   └── pages/
-│       ├── AccueilPage.tsx      # Page d'accueil
-│       ├── CartePage.tsx        # Carte interactive
-│       ├── ArmureriePage.tsx    # Galerie d'alternatives
-│       ├── ConseilPage.tsx      # Témoignages
-│       ├── EcolePage.tsx        # Ressources et outils
-│       └── QuetesPage.tsx       # Système de quêtes
-├── package.json
-├── tailwind.config.js      # Configuration Tailwind avec couleurs personnalisées
-└── README.md
-```
-
----
-
-## 📱 Responsive Design
-
-L'interface est entièrement responsive et optimisée pour :
-
-- **Mobile** : Navigation par swipe, double tap pour vue d'ensemble
-- **Tablette** : Adaptation automatique de la mise en page
-- **Desktop** : Barre d'état avec raccourcis clavier, navigation optimale
-
-### Adaptations mobiles
-
-- Pas de barre de navigation en bas (navigation par swipe uniquement)
-- Double tap pour accéder à la vue d'ensemble
-- Padding ajusté pour une meilleure utilisation de l'écran
-- Gestes tactiles optimisés
-
----
-
-## ⌨️ Raccourcis Clavier
-
-| Raccourci | Action |
-|-----------|--------|
-| `Alt + A` | Page suivante (cycle) |
-| `←` / `→` | Naviguer entre les pages |
-| `W` | Afficher la vue d'ensemble |
-| `Échap` | Revenir à la vue normale |
-
-### Mobile
-
-- **Swipe gauche/droite** : Navigation entre les pages
-- **Double tap** : Afficher la vue d'ensemble
-
----
-
-## 🎨 Design & UX
-
-### Palette de couleurs
-
-- **Vert forêt** (`forest-green`) : Nature, écologie, résistance
-- **Bleu confiance** (`trust-blue`) : Fiabilité, professionnalisme
-- **Orange chaleureux** (`warm-orange`) : Énergie, engagement
-
-### Typographie
-
-- **Inter** : Police principale (lisibilité optimale)
-- **Kalam** (handwritten) : Police pour les titres (ton ludique)
-
-### Principes de design
-
-1. **Simplicité** : Interface épurée, pas d'emojis excessifs
-2. **Interactivité** : Animations fluides, feedback visuel immédiat
-3. **Accessibilité** : Contraste suffisant, navigation clavier complète
-4. **Engagement** : Gamification avec système de quêtes
-
----
-
-## ✨ Fonctionnalités Détailées
-
-### Calculateur d'économies
-
-- Estimation basée sur 150€/PC/an (licences Windows + Office)
-- Calcul automatique des économies annuelles et sur 5 ans
-- Interface simple et intuitive
-
-### Checklist de migration
-
-- 7 étapes essentielles de migration
-- Cases à cocher interactives
-- Suivi visuel de la progression
-
-### Générateur de plan
-
-- Formulaire de saisie (établissement, nombre de PC, date, priorités)
-- Génération automatique d'un plan personnalisé
-- Phases détaillées selon les priorités sélectionnées
-- Téléchargement du plan en fichier texte
-- Calcul des économies intégré
-
-### Système de quêtes
-
-- 6 quêtes progressives avec badges
-- Suivi de progression par étape
-- Statistiques globales
-- Gamification pour encourager l'action
 
 ---
 
@@ -380,6 +259,128 @@ Cette approche de navigation s'aligne parfaitement avec le thème "Résistance n
 - Support des lecteurs d'écran
 
 ---
+
+## 🛠️ Technologies
+
+### Frontend
+
+- **Next.js 14** : Framework React avec App Router pour le routing et le SSR
+- **TypeScript** : Typage statique pour une meilleure maintenabilité
+- **Tailwind CSS** : Framework CSS utilitaire pour un design responsive
+- **Framer Motion** : Bibliothèque d'animations fluides et performantes
+- **Lucide React** : Icônes modernes et légères
+
+### Structure
+
+```
+hairgonomies/
+├── app/
+│   ├── layout.tsx          # Layout principal avec métadonnées
+│   ├── page.tsx            # Page d'accueil avec système de navigation
+│   └── globals.css         # Styles globaux et variables CSS
+├── components/
+│   ├── OSNavigator.tsx     # Système de navigation OS (modes, raccourcis)
+│   └── pages/
+│       ├── AccueilPage.tsx      # Page d'accueil
+│       ├── CartePage.tsx        # Carte interactive
+│       ├── ArmureriePage.tsx    # Galerie d'alternatives
+│       ├── ConseilPage.tsx      # Témoignages
+│       ├── EcolePage.tsx        # Ressources et outils
+│       └── QuetesPage.tsx       # Système de quêtes
+├── package.json
+├── tailwind.config.js      # Configuration Tailwind avec couleurs personnalisées
+└── README.md
+```
+
+---
+
+## 📱 Responsive Design
+
+L'interface est entièrement responsive et optimisée pour :
+
+- **Mobile** : Navigation par swipe, double tap pour vue d'ensemble
+- **Tablette** : Adaptation automatique de la mise en page
+- **Desktop** : Barre d'état avec raccourcis clavier, navigation optimale
+
+### Adaptations mobiles
+
+- Pas de barre de navigation en bas (navigation par swipe uniquement)
+- Double tap pour accéder à la vue d'ensemble
+- Padding ajusté pour une meilleure utilisation de l'écran
+- Gestes tactiles optimisés
+
+---
+
+## ⌨️ Raccourcis Clavier
+
+| Raccourci | Action |
+|-----------|--------|
+| `Alt + A` | Page suivante (cycle) |
+| `←` / `→` | Naviguer entre les pages |
+| `W` | Afficher la vue d'ensemble |
+| `Échap` | Revenir à la vue normale |
+
+### Mobile
+
+- **Swipe gauche/droite** : Navigation entre les pages
+- **Double tap** : Afficher la vue d'ensemble
+
+---
+
+## 🎨 Design & UX
+
+### Palette de couleurs
+
+- **Vert forêt** (`forest-green`) : Nature, écologie, résistance
+- **Bleu confiance** (`trust-blue`) : Fiabilité, professionnalisme
+- **Orange chaleureux** (`warm-orange`) : Énergie, engagement
+
+### Typographie
+
+- **Inter** : Police principale (lisibilité optimale)
+- **Kalam** (handwritten) : Police pour les titres (ton ludique)
+
+### Principes de design
+
+1. **Simplicité** : Interface épurée, pas d'emojis excessifs
+2. **Interactivité** : Animations fluides, feedback visuel immédiat
+3. **Accessibilité** : Contraste suffisant, navigation clavier complète
+4. **Engagement** : Gamification avec système de quêtes
+
+---
+
+## ✨ Fonctionnalités Détailées
+
+### Calculateur d'économies
+
+- Estimation basée sur 150€/PC/an (licences Windows + Office)
+- Calcul automatique des économies annuelles et sur 5 ans
+- Interface simple et intuitive
+
+### Checklist de migration
+
+- 7 étapes essentielles de migration
+- Cases à cocher interactives
+- Suivi visuel de la progression
+
+### Générateur de plan
+
+- Formulaire de saisie (établissement, nombre de PC, date, priorités)
+- Génération automatique d'un plan personnalisé
+- Phases détaillées selon les priorités sélectionnées
+- Téléchargement du plan en fichier texte
+- Calcul des économies intégré
+
+### Système de quêtes
+
+- 6 quêtes progressives avec badges
+- Suivi de progression par étape
+- Statistiques globales
+- Gamification pour encourager l'action
+
+---
+
+
 
 ## 🔮 Améliorations Futures
 
