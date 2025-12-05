@@ -70,7 +70,7 @@ export default function Home() {
     >
       {viewMode === 'normal' && (
         <>
-          {currentPage === 'accueil' && <AccueilPage />}
+          {currentPage === 'accueil' && <AccueilPage setCurrentPage={setCurrentPage} />}
           {currentPage === 'carte' && <CartePage />}
           {currentPage === 'armurerie' && <ArmureriePage />}
           {currentPage === 'conseil' && <ConseilPage />}

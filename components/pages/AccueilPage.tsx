@@ -2,8 +2,13 @@
 
 import { motion } from 'framer-motion'
 import { Shield, TrendingDown, Users, Zap } from 'lucide-react'
+import { PageId } from '@/app/page'
 
-export default function AccueilPage() {
+interface AccueilPageProps {
+  setCurrentPage: (page: PageId) => void
+}
+
+export default function AccueilPage({ setCurrentPage }: AccueilPageProps) {
   const stats = [
     { icon: Shield, value: '47', label: 'Villages Résistants', color: 'forest-green' },
     { icon: TrendingDown, value: '1,2M€', label: 'Économies réalisées', color: 'trust-blue' },
@@ -112,6 +117,7 @@ export default function AccueilPage() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => setCurrentPage('carte')}
               className="bg-white text-forest-green-700 px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
             >
               Explorer la Carte
@@ -119,6 +125,7 @@ export default function AccueilPage() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => setCurrentPage('armurerie')}
               className="bg-warm-orange-500 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
             >
               Découvrir l'Arsenal

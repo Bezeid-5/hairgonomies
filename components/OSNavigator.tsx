@@ -31,6 +31,9 @@ export default function OSNavigator({
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+  const lastTapRef = useRef<number>(0)
+  const tapTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const doubleTapDetectedRef = useRef<boolean>(false)
 
   // Navigation tactile (swipe)
   const minSwipeDistance = 50
@@ -44,12 +47,59 @@ export default function OSNavigator({
     setTouchEnd(e.targetTouches[0].clientX)
   }
 
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return
+  const onTouchEnd = (e?: React.TouchEvent) => {
+    const now = Date.now()
+    const DOUBLE_TAP_DELAY = 300
     
-    const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > minSwipeDistance
-    const isRightSwipe = distance < -minSwipeDistance
+    // Vérifier d'abord le double tap avant de traiter le swipe
+    const distance = touchStart && touchEnd ? Math.abs(touchStart - touchEnd) : 0
+    const isSmallMovement = distance < minSwipeDistance
+    
+    if (!touchStart || !touchEnd || isSmallMovement) {
+      // Tap (pas de mouvement ou mouvement petit), vérifier le double tap
+      if (now - lastTapRef.current < DOUBLE_TAP_DELAY) {
+        // Double tap détecté
+        e?.preventDefault()
+        e?.stopPropagation()
+        doubleTapDetectedRef.current = true
+        
+        if (tapTimeoutRef.current) {
+          clearTimeout(tapTimeoutRef.current)
+          tapTimeoutRef.current = null
+        }
+        
+        // Toujours afficher la vue d'ensemble si on est en mode normal
+        if (viewMode === 'normal') {
+          setViewMode('overview')
+        } else if (viewMode === 'overview') {
+          setViewMode('normal')
+        }
+        
+        lastTapRef.current = 0
+        
+        // Réinitialiser le flag après un court délai pour permettre les prochains clics
+        setTimeout(() => {
+          doubleTapDetectedRef.current = false
+        }, 500)
+        
+        setTouchStart(null)
+        setTouchEnd(null)
+        return
+      } else {
+        // Premier tap, attendre pour voir si c'est un double tap
+        lastTapRef.current = now
+        tapTimeoutRef.current = setTimeout(() => {
+          lastTapRef.current = 0
+        }, DOUBLE_TAP_DELAY)
+        setTouchStart(null)
+        setTouchEnd(null)
+        return
+      }
+    }
+    
+    // Swipe détecté (mouvement significatif)
+    const isLeftSwipe = touchStart - touchEnd > minSwipeDistance
+    const isRightSwipe = touchEnd - touchStart > minSwipeDistance
 
     if (isLeftSwipe && viewMode === 'normal') {
       const currentIndex = pages.findIndex(p => p.id === currentPage)
@@ -63,7 +113,39 @@ export default function OSNavigator({
         setCurrentPage(pages[currentIndex - 1].id)
       }
     }
+    
+    setTouchStart(null)
+    setTouchEnd(null)
   }
+
+  // Nettoyage du timeout au démontage
+  useEffect(() => {
+    return () => {
+      if (tapTimeoutRef.current) {
+        clearTimeout(tapTimeoutRef.current)
+      }
+    }
+  }, [])
+
+  // Empêcher les clics sur les éléments interactifs après un double tap
+  useEffect(() => {
+    const handleClickCapture = (e: MouseEvent) => {
+      if (doubleTapDetectedRef.current) {
+        e.preventDefault()
+        e.stopPropagation()
+        e.stopImmediatePropagation()
+      }
+    }
+
+    // Utiliser capture phase pour intercepter avant que les autres handlers ne se déclenchent
+    document.addEventListener('click', handleClickCapture, true)
+    return () => {
+      document.removeEventListener('click', handleClickCapture, true)
+    }
+  }, [])
+
+  // Ne pas réinitialiser lastTapRef quand on change de page depuis la vue d'ensemble
+  // Le double tap doit continuer à fonctionner même après avoir changé de page
 
   // Navigation clavier horizontale
   useEffect(() => {
@@ -88,13 +170,22 @@ export default function OSNavigator({
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [currentPage, pages, setCurrentPage, viewMode])
 
+  // Empêcher les clics après un double tap
+  const handleClick = (e: React.MouseEvent) => {
+    if (doubleTapDetectedRef.current) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+  }
+
   return (
     <div 
       ref={containerRef}
       className="min-h-screen bg-gradient-to-br from-forest-green-50 via-trust-blue-50 to-warm-orange-50"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}
+      onTouchEnd={(e) => onTouchEnd(e)}
+      onClick={handleClick}
     >
       {/* Mode Normal - Page active */}
       {viewMode === 'normal' && (
@@ -232,6 +323,16 @@ export default function OSNavigator({
                 A
               </kbd>
               <span className="ml-1 text-white/60">Page suivante</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <kbd className="px-2 py-1 bg-[#3BAFDA]/20 text-[#3BAFDA] rounded border border-[#3BAFDA]/40 font-mono">
+                ←
+              </kbd>
+              <span className="text-white/50">/</span>
+              <kbd className="px-2 py-1 bg-[#3BAFDA]/20 text-[#3BAFDA] rounded border border-[#3BAFDA]/40 font-mono">
+                →
+              </kbd>
+              <span className="ml-1 text-white/60">Naviguer</span>
             </div>
             <div className="flex items-center gap-2">
               <kbd className="px-2 py-1 bg-[#3BAFDA]/20 text-[#3BAFDA] rounded border border-[#3BAFDA]/40 font-mono">
