@@ -8,13 +8,13 @@
 - [🎯 Fonctionnalités](#-fonctionnalités)
 - [🔗 Liens](#-liens)
 - [🚀 Installation](#-installation)
+- [💡 Justifications Techniques](#-justifications-techniques)
 - [🛠️ Technologies](#️-technologies)
 - [📱 Responsive Design](#-responsive-design)
 - [⌨️ Raccourcis Clavier](#️-raccourcis-clavier)
 - [🎨 Design & UX](#-design--ux)
 - [📝 Structure du Projet](#-structure-du-projet)
 - [✨ Fonctionnalités Détailées](#-fonctionnalités-détaillées)
-- [💡 Justifications Techniques](#-justifications-techniques)
 - [🔮 Améliorations Futures](#-améliorations-futures)
 
 ---
