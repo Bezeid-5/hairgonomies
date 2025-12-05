@@ -266,16 +266,94 @@ L'interface est entièrement responsive et optimisée pour :
 - **DX** : Excellente expérience développeur avec TypeScript intégré
 - **App Router** : Routing moderne et performant
 
-### Système de navigation OS
+### Système de navigation OS et Expérience Utilisateur
 
-**Problématique** : Créer une expérience unique qui se démarque des interfaces web classiques.
+#### 🎯 Concept et Inspiration
 
-**Solution** : Implémentation d'un système de navigation inspiré des OS (modes de vue, raccourcis clavier, vue d'ensemble) pour une expérience immersive et intuitive.
+**Problématique** : Créer une expérience unique qui se démarque des interfaces web classiques et qui offre une navigation intuitive et moderne.
 
-**Avantages** :
-- Navigation rapide avec raccourcis clavier
-- Vue d'ensemble pour une navigation visuelle
-- Expérience cohérente desktop/mobile
+**Inspiration** : Notre équipe Siraj a été inspirée par les systèmes d'exploitation modernes (Linux, Windows, macOS) qui offrent des mécanismes de navigation puissants et naturels. Nous avons adapté ces concepts au web pour créer une expérience utilisateur immersive et innovante.
+
+#### 🚀 Choix de l'Expérience Utilisateur
+
+**Navigation par Swipe (Mobile)**
+- **Pourquoi** : Le swipe est devenu un geste naturel et intuitif sur mobile, utilisé par des milliards d'utilisateurs quotidiennement (réseaux sociaux, galeries photos, etc.)
+- **Avantages** :
+  - Navigation fluide et rapide entre les pages
+  - Réduction de la fatigue oculaire (pas besoin de chercher des boutons)
+  - Expérience native et familière pour les utilisateurs mobiles
+  - Meilleure utilisation de l'espace écran (pas de barre de navigation encombrante)
+
+**Double Tap pour Vue d'ensemble (Mobile)**
+- **Pourquoi** : Le double tap est un geste standard sur mobile, facilement mémorisable
+- **Avantages** :
+  - Accès rapide à une vue globale sans encombrer l'interface
+  - Parité avec l'expérience desktop (touche W)
+  - Intuitif et découvert facilement par les utilisateurs
+
+**Vue d'ensemble (Desktop/Mobile)**
+- **Pourquoi** : Inspirée de la vue d'ensemble des OS (Mission Control sur macOS, Task View sur Windows)
+- **Avantages** :
+  - Navigation visuelle et spatiale
+  - Permet de voir toutes les pages en un coup d'œil
+  - Facilite la compréhension de la structure de l'application
+  - Overlay foncé pour se concentrer sur le choix de navigation
+
+**Système de modes de navigation**
+- **Pourquoi** : Offrir différents niveaux de navigation selon le contexte d'utilisation
+- **Avantages** :
+  - Flexibilité : chaque utilisateur peut choisir sa méthode préférée
+  - Efficacité : raccourcis clavier pour les utilisateurs avancés
+  - Accessibilité : navigation tactile pour tous les niveaux
+
+**Barre d'état avec raccourcis clavier (Desktop)**
+- **Pourquoi** : Informer les utilisateurs des raccourcis disponibles sans encombrer l'interface principale
+- **Avantages** :
+  - Découvrabilité des fonctionnalités
+  - Référence rapide pour les raccourcis
+  - Design épuré et professionnel
+  - Non intrusive (barre fine en bas)
+
+**Absence de barre de navigation mobile**
+- **Pourquoi** : Maximiser l'espace d'affichage et éviter la redondance avec le swipe
+- **Avantages** :
+  - Plus d'espace pour le contenu
+  - Interface plus épurée
+  - Focus sur le contenu plutôt que sur la navigation
+  - Expérience immersive
+
+#### 📊 Avantages Globaux de cette Approche
+
+1. **Engagement Utilisateur**
+   - Expérience unique et mémorable qui encourage l'exploration
+   - Gamification subtile avec le système de quêtes
+
+2. **Performance**
+   - Navigation native (swipe) plus rapide que les clics sur boutons
+   - Animations optimisées avec Framer Motion
+   - Pas de rechargement de page (SPA)
+
+3. **Accessibilité Multi-plateforme**
+   - Desktop : navigation clavier efficace
+   - Mobile : gestes tactiles naturels
+   - Adaptation automatique selon le contexte
+
+4. **Différenciation**
+   - Se démarque des interfaces web traditionnelles
+   - Crée une identité visuelle forte pour le projet NIRD
+   - Montre l'innovation de la communauté du libre
+
+5. **Ergonomie**
+   - Réduction du nombre de clics/taps nécessaires
+   - Navigation spatiale intuitive
+   - Feedback visuel immédiat
+
+#### 🎨 Cohérence avec le Thème
+
+Cette approche de navigation s'aligne parfaitement avec le thème "Résistance numérique" :
+- **Innovation** : Comme les logiciels libres innovent, notre interface innove aussi
+- **Contrôle utilisateur** : Plusieurs façons de naviguer = plus de contrôle
+- **Modernité** : Interface à la pointe de la technologie web moderne
 
 ### Framer Motion
 
