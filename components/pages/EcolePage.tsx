@@ -336,7 +336,7 @@ export default function EcolePage() {
             <div className="space-y-4">
               <div>
                 <label htmlFor="nom-etablissement" className="block text-gray-700 font-semibold mb-2">
-                  Nom de l'établissement
+                  Nom de l&apos;établissement
                 </label>
                 <input
                   id="nom-etablissement"
